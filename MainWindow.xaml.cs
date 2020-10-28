@@ -95,5 +95,15 @@ namespace Sorea_Stefania_Lab2
                 MessageBox.Show("Numai cifre se pot introduce!", "InputError", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void FilledItems_Click(object sender, RoutedEventArgs e)
+        {
+            string DoughnutFlavour;
+
+            MenuItem SelectedItem = (MenuItem)e.OriginalSource;
+            DoughnutFlavour = SelectedItem.Header.ToString();
+            Enum.TryParse(DoughnutFlavour, out DoughnutType myFlavour);
+            myDoughnutMachine.MakeDoughnuts(myFlavour);
+        }
     }
 }

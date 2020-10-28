@@ -55,7 +55,7 @@
                         <MenuItem x:Name="glazedMenuItem" Header="Glazed" Click="glazedMenuItem_Click" IsCheckable="True"/>
                         <MenuItem x:Name="sugarMenuItem" Header="Sugar" Click="sugarMenuItem_Click" IsCheckable="True"/>
                     </MenuItem>
-                    <MenuItem Header="Filled">
+                    <MenuItem Header="Filled" Click="FilledItems_Click">
                         <MenuItem x:Name="lemonMenuItem" Header="Lemon"/>
                         <MenuItem x:Name="chocolateMenuItem" Header="Chocolate"/>
                         <MenuItem x:Name="vanillaMenuItem" Header="Vanilla"/>
