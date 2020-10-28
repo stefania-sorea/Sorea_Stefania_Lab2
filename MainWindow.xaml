@@ -9,7 +9,7 @@
     <Window.Background>
         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}"/>
     </Window.Background>
-    <Grid>
+    <Grid MenuItem.Click="FilledItemsShow_Click">
         <Label x:Name="lblTitle" Content="Doughnuts Bake 'n Sale" HorizontalAlignment="Center" Height="48" Margin="0,27,0,0" VerticalAlignment="Top" Width="286" FontWeight="Bold" FontSize="24"/>
         <GroupBox x:Name="gbRaised" Header="Raised" HorizontalAlignment="Left" Height="96" Margin="120,92,0,0" VerticalAlignment="Top" Width="229" FontWeight="Bold">
             <Canvas>
@@ -34,15 +34,15 @@
                 <Label x:Name="lblQuantity" Content="Quantity" Canvas.Left="23" Canvas.Top="10" FontWeight="Regular"/>
                 <TextBox x:Name="txtQuantity" Canvas.Left="84" Canvas.Top="14" Text="0" TextWrapping="Wrap" Width="36" Height="22" FontWeight="Regular" KeyUp="txtQuantity_KeyUp"/>
                 <Label x:Name="lblType" Content="Type" Canvas.Left="141" Canvas.Top="10" FontWeight="Regular"/>
-                <ComboBox x:Name="cmbType" Canvas.Left="181" Canvas.Top="14" Width="120"/>
+                <ComboBox x:Name="cmbType" Canvas.Left="181" Canvas.Top="14" Width="120" SelectionChanged="cmbType_SelectionChanged"/>
                 <Label x:Name="lblPrice" Content="Price" Canvas.Left="343" Canvas.Top="10" FontWeight="Regular"/>
                 <TextBox x:Name="txtPrice" Canvas.Left="384" Canvas.Top="16" Text="0" TextWrapping="Wrap" Width="52" FontWeight="Regular" Height="20" IsReadOnly="True"/>
                 <ListBox x:Name="lstSale" Height="81" Canvas.Left="23" Canvas.Top="41" Width="413"/>
                 <Label x:Name="lblTotal" Content="Total" Canvas.Left="305" Canvas.Top="122"/>
-                <TextBox Canvas.Left="343" Canvas.Top="127" Text="0" TextWrapping="Wrap" Width="93" Height="22" IsReadOnly="True"/>
-                <Button x:Name="btnAddToSale" Content="Add to Sale" Canvas.Left="490" Canvas.Top="41" Width="98" FontWeight="Regular"/>
-                <Button x:Name="btnRemoveItem" Content="Remove Item" Canvas.Left="490" Canvas.Top="68" Width="98" FontWeight="Regular"/>
-                <Button x:Name="btnbtnCheckout" Content="Checkout" Canvas.Left="490" Canvas.Top="126" Width="98"/>
+                <TextBox x:Name="txtTotal" Canvas.Left="343" Canvas.Top="127" Text="0" TextWrapping="Wrap" Width="93" Height="22" IsReadOnly="True"/>
+                <Button x:Name="btnAddToSale" Content="Add to Sale" Canvas.Left="490" Canvas.Top="41" Width="98" FontWeight="Regular" Click="btnAdd_Click"/>
+                <Button x:Name="btnRemoveItem" Content="Remove Item" Canvas.Left="490" Canvas.Top="68" Width="98" FontWeight="Regular" Click="btnRemove_Click"/>
+                <Button x:Name="btnCheckout" Content="Checkout" Canvas.Left="490" Canvas.Top="126" Width="98" Click="btnCheckout_Click" />
             </Canvas>
         </GroupBox>
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="130">
